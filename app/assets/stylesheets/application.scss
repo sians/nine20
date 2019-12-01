@@ -15,9 +15,14 @@
 @import "components/index";
 @import "components/images";
 @import "components/card";
+@import "components/buttons";
 
 @import "issues/index";
 @import "issues/show";
 
 @import "medias/show";
 
+@import "forms/media";
+@import "forms/issue";
+
+@import "admin/dashboard";

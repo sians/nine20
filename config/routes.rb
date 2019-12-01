@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
-    resources :issues, only: [:new, :create, :edit, :update]
-    resources :medias, only: [:new, :create]
+    resources :issues, only: [:new, :create, :edit, :update, :destroy]
+    resources :medias, only: [:new, :create, :edit, :update, :destroy]
   end
 
   devise_for :users
