@@ -2,14 +2,15 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
-
+    resources :issues, only: [:new, :create, :edit, :update]
+    resources :medias, only: [:new, :create]
   end
 
   devise_for :users
   root to: 'issues#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :issues do
-    resources :medias
+  resources :issues, only: [:index, :show] do
+    resources :medias, only: [:index, :show]
   end
 
   get 'about', to: 'pages#about', as: 'about'

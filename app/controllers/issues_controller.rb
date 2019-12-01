@@ -9,22 +9,6 @@ class IssuesController < ApplicationController
   def show
   end
 
-  def new
-    @issue = Issue.new
-    authorize @issue
-  end
-
-  def create
-    @issue = Issue.new(issue_params)
-    authorize @issue
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
   private
 
   def get_issue

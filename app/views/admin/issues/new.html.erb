@@ -1,0 +1,7 @@
+<%= simple_form_for([:admin, @issue]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :cover_image %>
+  <%= f.input :issue_number %>
+  <%= f.input :byline %>
+  <%= f.button :submit, "Submit" %>
+<% end %>
