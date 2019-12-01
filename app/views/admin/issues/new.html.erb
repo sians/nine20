@@ -1,7 +1,24 @@
-<%= simple_form_for([:admin, @issue]) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :cover_image %>
-  <%= f.input :issue_number %>
-  <%= f.input :byline %>
-  <%= f.button :submit, "Submit" %>
-<% end %>
+<div class="new-issue">
+  <h3>Create New Issue</h3>
+  <div class="issue-form">
+    <%= simple_form_for([:admin, @issue]) do |f| %>
+      <div class="form-group">
+        <%= f.input :title %>
+      </div>
+      <div class="form-group">
+        <%= f.input :cover_image %>
+      </div>
+      <div class="form-group">
+        <%= f.input :issue_number %>
+      </div>
+      <div class="form-group">
+        <%= f.input :byline %>
+      </div>
+      <div class="form-submit">
+        <%= link_to "Cancel", admin_path, class: 'btn-cancel' %>
+        <%= f.button :submit, "Submit", class: 'btn-ninetwenty' %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

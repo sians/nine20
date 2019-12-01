@@ -1,0 +1,20 @@
+.admin {
+  margin: 50px;
+  .admin-section {
+    margin: 50px 0px;
+    h4 {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .underline {
+      padding-bottom: 5px;
+      border-bottom: 2px solid $ninetwenty;
+    }
+    .fa-plus-circle {
+      margin: 0px 5px 0px 20px;
+      color: $ninetwenty;
+    }
+
+  }
+}
