@@ -1,0 +1,85 @@
+<div class="new-media">
+  <% if params[:action] == 'new' %>
+    <h3>Create New Media</h3>
+  <% else %>
+    <h3>Edit Media</h3>
+  <% end %>
+
+  <div class="media-form">
+
+    <%= simple_form_for([:admin, @media]) do |f| %>
+      <div class="form-group">
+        <%= f.input :title,
+        :label => 'Title of media:' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :media_type,
+        :label => 'Type of media:',
+        :collection => ["Article", "Podcast", "Video"],
+        :selected => "Article"
+        %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :issue_id,
+        :label => 'Issue for addition:',
+        :collection => Issue.all.map{|issue|[issue.title, issue.id]},
+        :selected => [Issue.last.title, Issue.last.id]
+        %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :minutes,
+        :label => 'Minutes to read:'
+         %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :date_published,
+        :label => 'Date published:' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :blurb %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :content %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :video_url %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :audio_url %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :cover_image %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :cover_image_cache, as: :hidden %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :published %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :user_ids, collection: User.all.map{|user|[user.first_name, user.id]}, input_html: { multiple: true } %>
+      </div>
+
+      <div class="form-submit">
+        <%= link_to "Cancel", admin_path, class: 'btn-cancel' %>
+        <% if params[:action] == 'new' %>
+          <%= f.button :submit, "Create", class: 'btn-ninetwenty' %>
+        <% else %>
+          <%= f.button :submit, "Edit", class: 'btn-ninetwenty' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

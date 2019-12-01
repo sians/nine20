@@ -1,5 +1,6 @@
 class Admin::IssuesController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_issue, only: %i[edit update]
 
   def new
     @issue = Issue.new
@@ -16,6 +17,11 @@ class Admin::IssuesController < ApplicationController
   end
 
   def update
+    if @issue.update(issue_params)
+      redirect_to admin_path
+    else
+      render 'admin/issues/edit'
+    end
   end
 
   private

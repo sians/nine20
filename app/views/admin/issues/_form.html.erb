@@ -1,0 +1,36 @@
+<div class="new-issue">
+
+  <% if params[:action] == 'new' %>
+    <h3>Create New Issue</h3>
+  <% else %>
+    <h3>Edit Issue</h3>
+  <% end %>
+
+  <div class="issue-form">
+    <%= simple_form_for([:admin, @issue]) do |f| %>
+      <div class="form-group">
+        <%= f.input :title %>
+      </div>
+      <div class="form-group">
+        <%= f.input :cover_image %>
+      </div>
+      <div class="form-group">
+        <%= f.input :issue_number %>
+      </div>
+      <div class="form-group">
+        <%= f.input :byline %>
+      </div>
+      <div class="form-submit">
+        <%= link_to "Cancel", admin_path, class: 'btn-cancel' %>
+
+        <% if params[:action] == 'new' %>
+          <%= f.button :submit, "Create", class: 'btn-ninetwenty' %>
+        <% else %>
+          <%= f.button :submit, "Edit", class: 'btn-ninetwenty' %>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>
