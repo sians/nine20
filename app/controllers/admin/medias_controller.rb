@@ -1,5 +1,6 @@
 class Admin::MediasController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_media, only: %i[edit update]
 
   def new
     @media = Media.new
@@ -25,6 +26,11 @@ class Admin::MediasController < ApplicationController
   end
 
   def update
+    if @media.update(media_params)
+      redirect_to admin_path
+    else
+      render 'admin/medias/edit'
+    end
   end
 
   private
