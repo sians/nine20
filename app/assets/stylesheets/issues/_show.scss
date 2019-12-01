@@ -1,0 +1,30 @@
+.issue-show-container {
+  display: flex;
+  .cover-image {
+    width: 55%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.1);
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  .media-card-container {
+    overflow: scroll;
+    width: 100%;
+    padding-top: 30px;
+    height: 100vh;
+    padding-bottom: 100px;
+    .media-card {
+      padding: 0px 30px 30px 30px;
+    }
+    h6 {
+      text-align: left;
+    }
+    .back {
+      text-align: center;
+    }
+  }
+}
+

@@ -7,10 +7,26 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://use.typekit.net/fak0qyj.css">
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if params[:controller] == 'issues' && params[:action] == 'index' %>
+      <%= render 'shared/sidenav_wide' %>
+      <div class="page-content-wide">
+        <%= yield %>
+      </div>
+    <% else %>
+      <%= render 'shared/sidenav_slim' %>
+      <div class="page-content-slim">
+        <%= yield %>
+      </div>
+    <% end %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

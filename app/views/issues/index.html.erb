@@ -1,0 +1,31 @@
+<section id="issue-hero">
+  <% unless @issues.empty? %>
+    <div class="hero-cover tinted-image" style="background-image: url(<%= image_path @issues.first.cover_image %>)">
+      <div class="feature-details">
+        <h1><%= link_to issue_path(@issues.first) do %><span>Latest Issue</span><% end %></h1>
+        <h2><span><%= @issues.first.title %></span></h2>
+      </div>
+    </div>
+  <% end %>
+</section>
+
+<section id="issue-index">
+  <div class="issue-index">
+    <div class="index-header">
+
+    </div>
+    <h3>Recent Issues</h3>
+    <div class="row">
+      <% unless @issues.empty? %>
+        <% @issues.each do |issue| %>
+          <div class="col-12 col-md-6">
+            <div class="issue-card">
+            <%#= issue.issue_number %>
+              <h1><%= link_to issue.title, issue_path(issue) %></h1>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

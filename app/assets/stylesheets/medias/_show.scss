@@ -1,0 +1,75 @@
+.media-show-container {
+  height: 100vh;
+  overflow: scroll;
+  .back-icon a {
+    height: 50px;
+    width: 50px;
+    z-index: 1000;
+    color: $ninetwenty;
+    font-size: 55px;
+    position: fixed;
+    top: 15px;
+    left: 90px;
+    cursor: pointer;
+  }
+  .media-show-hero {
+    height: 250px;
+    background-color: rgba(0,0,0,0.1);
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .media-content {
+    text-align: center;
+    margin: 0px 50px;
+    .media-header {
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      h2 {
+        font-size: 3.5rem;
+        margin: 5rem;
+      }
+      p {
+        width: 40%;
+        margin: auto;
+        font-size: 1.2rem;
+        font-style: italic;
+        letter-spacing: 1px;
+      }
+    }
+    .media-main {
+      margin: 3rem;
+      text-align: left;
+      margin: 50px 8rem 250px;
+      p {
+        font-size: 22px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+    }
+    .back {
+      text-align: center;
+      margin-bottom: 150px;
+      a {
+        color: black;
+        span.red-text {
+          color: $ninetwenty;
+        }
+      }
+    }
+  }
+
+}
+
+
+// .issue-nav {
+//   height: 30px;
+//   border-bottom: 1px solid $ninetwenty;
+//   opacity: 0.5;
+//   margin-bottom: 20px;
+// }

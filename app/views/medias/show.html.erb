@@ -1,0 +1,49 @@
+<div class="media-show-container">
+    <div class="back-icon">
+      <%= link_to issue_path(@issue) do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
+
+  <div class="media-show-hero">
+    <% if @media.cover_image.present? %>
+      <%= image_tag @media.cover_image_url %>
+    <% end %>
+  </div>
+  <div class="media-content">
+    <div class="media-header">
+      <h2><%= @media.title %></h2>
+      <p>
+        <% @media.users.each do |author| %>
+          <%= author.first_name %> <%= author.last_name %>
+        <% end %>
+      </p>
+      <p>
+        <%= @media.blurb %>
+      </p>
+    </div>
+    <section class="media-main">
+      <p>More text will go in here, which will of course be the brilliant compositions of all you dear friends.   Innterestinng stories about interesting thinngs, with lots of references which will be formatted with links and further reading in a subsection of the page, either after scrolling down or clicking through to a bibliography page.</p>
+
+      <p>We’ll see.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor luctus elementum. Donec nulla arcu, ultricies a commodo ut, auctor eu turpis. Integer ultrices ipsum a enim interdum ultrices sodales vitae elit. Praesent nec mauris nibh. Integer ut ligula nec diam ornare vehicula. Vivamus blandit turpis ut nulla auctor, vitae finibus arcu convallis. Morbi elementum dolor a cursus sollicitudin. Vestibulum vel pharetra sem. Suspendisse potenti. Aenean turpis eros, posuere in urna a, rhoncus convallis dolor. Mauris ultrices odio interdum, consequat nunc sed, cursus ante. Duis feugiat ex malesuada turpis congue, eget pellentesque erat tristique. Curabitur quam ligula, euismod ac tellus et, scelerisque egestas magna. Vestibulum vulputate dictum diam non sodales. Vivamus vel rutrum urna, nec cursus arcu.</p>
+
+      <p>In a suscipit velit. Vivamus velit nibh, bibendum et velit ut, mollis faucibus mi. Morbi porta, arcu vel porttitor ornare, nibh leo egestas dolor, ut eleifend magna mauris nec nunc. Suspendisse accumsan mi non ligula dictum euismod. Etiam et sollicitudin lacus, eu placerat odio. Praesent nisl orci, tincidunt sed nunc nec, facilisis efficitur quam. Nunc non felis aliquam, eleifend orci auctor, maximus turpis. Mauris semper sem eu arcu rutrum, a fringilla neque faucibus. Nam ac leo sed nibh viverra blandit. Nam at volutpat lacus. Cras dignissim tortor sem, a pretium turpis eleifend vel. Duis in velit dolor. Nullam in massa consequat, ultricies risus eget, mollis justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean congue magna nisl, et eleifend velit viverra quis. Nullam ultrices sed magna vitae dignissim.</p>
+
+      <p>Donec fermentum vel magna nec rhoncus. Aliquam blandit lacus vitae luctus semper. Phasellus vitae eros urna. Mauris placerat ut justo non vehicula. Nunc sed tortor vel sem posuere egestas. Ut ultrices arcu in purus cursus volutpat. Praesent non commodo massa, quis feugiat lacus. Nullam non lacinia massa, nec semper urna. Sed quis est purus. Nam quis ultrices leo, eget euismod nisi.</p>
+
+      <p>Duis cursus nibh ac metus tristique fermentum. Suspendisse molestie porttitor ultrices. Integer eu erat vitae quam hendrerit scelerisque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut vel est eget nunc efficitur tincidunt. Vivamus nunc mauris, hendrerit id massa ut, pellentesque ornare urna. Duis at neque pulvinar, aliquet massa a, lobortis nisi. Donec dignissim sodales nibh, ut sollicitudin mauris mattis vitae. Maecenas dignissim facilisis risus vel vehicula. Vivamus tincidunt orci maximus nisi laoreet, vitae blandit libero molestie. Maecenas pulvinar risus nec ornare varius. Vivamus ullamcorper mollis orci vel luctus. Morbi ac erat in velit molestie consectetur at vitae ante.</p>
+
+
+
+    </section>
+    <div class="back">
+      <h6>
+        <%= link_to issue_path(@issue) do %>
+        Back to <span class="red-text">Issue</span>
+        <% end %>
+      </h6>
+    </div>
+  </div>
+</div>

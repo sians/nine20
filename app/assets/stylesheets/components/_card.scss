@@ -1,0 +1,41 @@
+.issue-card {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  background-color: black;
+  img {
+
+  }
+}
+
+
+//        A R T I C L E        C A R D
+.media-card {
+  height: 350px;
+  position: relative;
+  .media-cover-img {
+    height: 150px;
+    background-color: rgba(0,0,0,0.1);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .media-card-content {
+    position: absolute;
+    padding: 20px;
+    width: calc(100% - 60px);
+    top: 70px;
+    .date {
+      color: white;
+    }
+  }
+
+  span.media-title {
+    background-color: $ninetwenty;
+    color: white;
+    font-size: 30px;
+    padding: 0px 5px;
+  }
+}

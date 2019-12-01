@@ -1,12 +1,92 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 20px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+a:hover {
+  text-decoration: none;
+  color: white;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// W I D E.   N A V.   S T Y L E S.
+
+.wide-nav {
+  width: 350px;
+  height: 100vh;
+  background-color: $ninetwenty;
+  color: white;
+  position: fixed;
+  text-align: center;
+  display: flex;
+  // display: none;
+  flex-direction: column;
+  align-items: space-between;
+  .logo-container {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    margin: 70px auto;
+  }
+  ul {
+    padding: 0px;
+    margin: 0px;
+    li {
+      list-style: none;
+      padding: 10px;
+    }
+  }
+
+  ul.social-list {
+    display: flex;
+    justify-content: center;
+    i {
+      font-size: 28px;
+    }
+  }
+}
+
+
+
+// S L I M.   N A V.   S T Y L E S.
+.slim-nav {
+  width: 70px;
+  height: 100vh;
+  background-color: $ninetwenty;
+  color: white;
+  position: absolute;
+  display: flex;
+  // display: none;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: flex-end;
+  .logo-container {
+    height: 100%;
+    text-align: center;
+    padding-top: 20px;
+    img {
+      width: 20px;
+    }
+  }
+  .social-container {
+    position: relative;
+    bottom: 0px;
+    ul.social-list {
+      margin: 50px 0px;
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      li{
+        list-style: none;
+        i {
+          font-size: 28px;
+          padding: 10px 10px;
+        }
+      }
+    }
+  }
 }
