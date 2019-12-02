@@ -17,6 +17,9 @@
       font-family: $headers-font;
       height: 35px;
     }
+    select.optional {
+      height: 100%;
+    }
     .form-submit {
       margin-top: 50px;
       display: flex;

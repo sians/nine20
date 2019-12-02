@@ -90,3 +90,23 @@ a:hover {
     }
   }
 }
+
+.admin-nav {
+  padding: 50px 0px;
+
+  ul {
+    font-family: $headers-font;
+    text-align: left;
+    font-size: 20px;
+    li {
+      padding: 10px 25px;
+    }
+    li.sub-nav-item {
+      background-color: $ninetwenty-light;
+      display: none;
+    }
+    i {
+      margin-right: 20px;
+    }
+  }
+}
