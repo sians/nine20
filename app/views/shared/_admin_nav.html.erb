@@ -32,7 +32,7 @@
       </li>
     <% end %>
 
-    <%#= link_to new_user_registration_path do %>
+    <%= link_to admin_new_user_path do %>
       <li class="nav-item sub-nav-item users-toggle
         <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
           active
@@ -41,7 +41,7 @@
         <% end %>">
         Add New
       </li>
-    <%# end %>
+    <% end %>
 
     <!-- I S S U E S -->
     <li class="nav-item item-toggle" id="issues-toggle">

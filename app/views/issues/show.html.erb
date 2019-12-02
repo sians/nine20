@@ -1,7 +1,7 @@
 <div class="issue-show-container">
-  <div class="cover-image">
-    <%= image_tag(@issue.cover_image_url) %>
-
+  <div class="cover-image" style="background-image: url(<%= image_path @issue.cover_image %>)">
+    <%#= image_tag(@issue.cover_image_url) %>
+    <div class="color-filter"></div>
   </div>
   <div class="media-card-container">
 <!--     <div class="issue-nav">
@@ -28,7 +28,5 @@
         </div>
       </div>
     <% end %>
-
-    <h6 class="back">Return to Issue</h6>
   </div>
 </div>

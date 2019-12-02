@@ -1,12 +1,15 @@
 <section id="issue-hero">
-  <% unless @issues.empty? %>
-    <div class="hero-cover tinted-image" style="background-image: url(<%= image_path @issues.first.cover_image %>)">
-      <div class="feature-details">
-        <h1><%= link_to issue_path(@issues.first) do %><span>Latest Issue</span><% end %></h1>
-        <h2><span><%= @issues.first.title %></span></h2>
+    <% unless @issues.empty? %>
+      <div class="hero-cover tinted-image" style="background-image: url(<%= image_path @issues.first.cover_image %>)">
+        <div class="color-filter">
+        </div>
+        <div class="feature-details">
+          <h1><%= link_to issue_path(@issues.first) do %><span>Latest Issue</span><% end %></h1>
+          <h2><span><%= @issues.first.title %></span></h2>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+
 </section>
 
 <section id="issue-index">
@@ -15,17 +18,21 @@
 
     </div>
     <h3>Recent Issues</h3>
-    <div class="row">
+
+    <div class="issue-cards">
       <% unless @issues.empty? %>
         <% @issues.each do |issue| %>
-          <div class="col-12 col-md-6">
-            <div class="issue-card">
-            <%#= issue.issue_number %>
+          <div class="issue-card" style="background-image: url(<%= image_path issue.cover_image if issue.cover_image.present? %>)">
+          <%#= issue.issue_number %>
+            <div class="color-filter">
+            </div>
+            <div class="issue-card-content">
               <h1><%= link_to issue.title, issue_path(issue) %></h1>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
+
   </div>
 </section>

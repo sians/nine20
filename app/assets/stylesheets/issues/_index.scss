@@ -6,7 +6,7 @@
     width: 100%;
     background-repeat: none;
     background-size: cover;
-    background-position: bottom right;
+    background-position: center right;
     position: relative;
     .feature-details {
       width: calc(100% - 50px);
@@ -20,13 +20,13 @@
       }
       h1 span {
         background-color: $ninetwenty;
-        color: white;
+        color: $cream;
         font-size: 4.5rem;
         padding: 0px 5px;
       }
       h2 span {
         background-color: black;
-        color: white;
+        color: $cream;
         font-size: 3rem;
 
       }
@@ -40,4 +40,29 @@
     text-align: center;
     margin-bottom: 50px;
   }
+
+  .issue-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .issue-card {
+      height: 400px;
+      width: 400px;
+      position: relative;
+      .issue-card-content {
+        position: absolute;
+        top: 0px;
+        a {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
+
+.color-filter {
+  height: 100%;
+  width: 100%;
+  background-color: #692e23;
+  opacity: 0.5;
 }
