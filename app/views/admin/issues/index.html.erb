@@ -1,0 +1,19 @@
+<div class="admin-container">
+  <h1>All Issues</h1>
+  <div class="admin-issues-container">
+    <% unless @issues.empty? %>
+      <% @issues.reverse.each do |issue| %>
+        <div class="admin-card admin-issue-card">
+          <h6><%= issue.title %></h6>
+          <div class="buttons">
+            <%= link_to 'Edit', edit_admin_issue_path(issue), class: 'btn-edit' %>
+            <%= link_to admin_issue_path(issue), method: :destroy do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

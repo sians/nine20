@@ -9,10 +9,10 @@ const adminNav = () => {
         subItems.forEach(subItem => {
           if (subItem.style.display === "list-item") {
             subItem.style.display = "none";
-            event.currentTarget.classList.remove("active");
+            // event.currentTarget.classList.remove("active");
           } else {
             subItem.style.display = "list-item";
-            event.currentTarget.classList.add("active");
+            // event.currentTarget.classList.add("active");
           }
         })
       })

@@ -2,6 +2,10 @@ class Admin::MediasController < ApplicationController
   before_action :authenticate_user!
   before_action :get_media, only: %i[edit update destroy]
 
+  def index
+    @medias = policy_scope(Media).order(created_at: :desc)
+  end
+
   def new
     @media = Media.new
     authorize @media

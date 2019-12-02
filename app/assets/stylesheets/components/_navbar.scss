@@ -92,6 +92,9 @@ a:hover {
   }
 }
 
+
+
+// A D M I N.   N A V.   S T Y L E S.
 .admin-nav {
   .logo-container {
     margin: 40px auto 20px;
@@ -112,9 +115,17 @@ a:hover {
     li.sub-nav-item {
       background-color: $ninetwenty-light;
       display: none;
+      padding-left: 70px;
+    }
+    li.sub-nav-item.active {
+      display: list-item;
+    }
+    li.sub-nav-item.show {
+      display: list-item;
     }
     i {
       margin-right: 20px;
+      width: 15px;
     }
   }
 }
