@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     #   get 'users', to: 'registrations#index'
     # end
     get 'users', to: 'registrations#index', as: 'users'
-
+    get 'users/new', to: 'registrations#new', as: 'new_user'
+    post 'users', to: 'registrations#create', as: 'create_user'
   end
 
   devise_for :users

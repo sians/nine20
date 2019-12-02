@@ -1,0 +1,48 @@
+<div class="new-user">
+
+  <% if params[:action] == 'new' %>
+    <h3>Create New User</h3>
+  <% else %>
+    <h3>Edit User Details</h3>
+  <% end %>
+
+  <div class="issue-form">
+    <%= simple_form_for([:admin, @user]) do |f| %>
+      <div class="form-group">
+        <%= f.input :email %>
+      </div>
+      <div class="form-group">
+        <%= f.input :password %>
+      </div>
+      <div class="form-group">
+        <%= f.input :first_name %>
+      </div>
+      <div class="form-group">
+        <%= f.input :last_name %>
+      </div>
+      <div class="form-group">
+        <%= f.input :avatar %>
+      </div>
+      <div class="form-group">
+        <%= f.input :bio %>
+      </div>
+      <div class="form-group">
+        <%= f.input :byline %>
+      </div>
+      <div class="form-group">
+        <%= f.input :website %>
+      </div>
+      <div class="form-submit">
+        <%= link_to "Cancel", admin_path, class: 'btn-cancel' %>
+
+        <% if params[:action] == 'new' %>
+          <%= f.button :submit, "Create", class: 'btn-ninetwenty' %>
+        <% else %>
+          <%= f.button :submit, "Edit", class: 'btn-ninetwenty' %>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>
