@@ -69,7 +69,9 @@
       </div>
 
       <div class="form-group">
-        <%= f.input :user_ids, collection: User.all.map{|user|[user.first_name, user.id]}, input_html: { multiple: true } %>
+        <%= f.input :user_ids,
+        :collection => User.all.map{|user|[user.first_name, user.id]},
+        :input_html => { multiple: true } %>
       </div>
 
       <div class="form-submit">

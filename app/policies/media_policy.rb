@@ -29,4 +29,8 @@ class MediaPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    true
+  end
+
 end

@@ -20,6 +20,11 @@
       <div class="page-content-wide">
         <%= yield %>
       </div>
+    <% elsif params[:controller] == 'admin/dashboard' %>
+      <%= render 'shared/admin_nav' %>
+      <div class="page-content-wide">
+        <%= yield %>
+      </div>
     <% else %>
       <%= render 'shared/sidenav_slim' %>
       <div class="page-content-slim">
