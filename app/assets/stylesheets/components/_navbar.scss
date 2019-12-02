@@ -1,13 +1,13 @@
 a {
   text-decoration: none;
-  color: white;
+  color: $cream;
   letter-spacing: 1px;
   font-size: 20px;
 }
 
 a:hover {
   text-decoration: none;
-  color: white;
+  color: $cream;
 }
 
 // W I D E.   N A V.   S T Y L E S.
@@ -16,7 +16,7 @@ a:hover {
   width: 350px;
   height: 100vh;
   background-color: $ninetwenty;
-  color: white;
+  color: $cream;
   position: fixed;
   text-align: center;
   display: flex;
@@ -27,7 +27,7 @@ a:hover {
     height: 250px;
     width: 250px;
     object-fit: cover;
-    margin: 70px auto;
+    margin: 40px auto;
   }
   ul {
     padding: 0px;
@@ -54,7 +54,7 @@ a:hover {
   width: 70px;
   height: 100vh;
   background-color: $ninetwenty;
-  color: white;
+  color: $cream;
   position: absolute;
   display: flex;
   // display: none;
@@ -85,6 +85,7 @@ a:hover {
         i {
           font-size: 28px;
           padding: 10px 10px;
+          color: $cream;
         }
       }
     }
@@ -92,14 +93,21 @@ a:hover {
 }
 
 .admin-nav {
-  padding: 50px 0px;
+  .logo-container {
+    margin: 40px auto 20px;
+  }
 
   ul {
     font-family: $headers-font;
     text-align: left;
     font-size: 20px;
-    li {
+    color: $cream;
+    li.nav-item {
       padding: 10px 25px;
+      cursor: pointer;
+    }
+    li.nav-item.active, li.nav-item:hover {
+      color: black;
     }
     li.sub-nav-item {
       background-color: $ninetwenty-light;
