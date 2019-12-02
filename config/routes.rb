@@ -2,8 +2,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
-    resources :issues, only: [:new, :create, :edit, :update, :destroy]
-    resources :medias, only: [:new, :create, :edit, :update, :destroy]
+    resources :issues
+    resources :medias
+
+    # devise_for :users, controllers: {registrations: "admin/registrations"}
+
+    # devise_scope :user do
+    #   get 'users', to: 'registrations#index'
+    # end
+    get 'users', to: 'registrations#index', as: 'users'
+
   end
 
   devise_for :users

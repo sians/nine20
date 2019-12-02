@@ -2,6 +2,10 @@ class Admin::IssuesController < ApplicationController
   before_action :authenticate_user!
   before_action :get_issue, only: %i[edit update]
 
+  def index
+    @issues = policy_scope(Issue).order(created_at: :desc)
+  end
+
   def new
     @issue = Issue.new
     authorize @issue
