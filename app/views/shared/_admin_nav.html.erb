@@ -1,39 +1,60 @@
 <div class="sidebar-sticky wide-nav admin-nav">
+  <div class="logo-container">
+    <%= link_to root_path do %>
+      <%= image_tag('/assets/ninetwenty-logo.png') %>
+    <% end %>
+  </div>
   <ul class="flex-column">
-    <li class="nav-item">
-      <i class="fas fa-tachometer-alt"></i>
-      Dashboard
-    </li>
+    <%= link_to admin_path do %>
+      <li class="nav-item">
+        <i class="fas fa-tachometer-alt"></i>
+        Dashboard
+      </li>
+    <% end %>
+
+    <!-- U S E R S -->
     <li class="nav-item item-toggle" id="users-toggle">
       <i class="fas fa-user"></i>
       Users
     </li>
-    <li class="nav-item sub-nav-item">
+    <li class="nav-item sub-nav-item users-toggle">
       All Users
     </li>
-    <li class="nav-item sub-nav-item">
+    <li class="nav-item sub-nav-item users-toggle">
       Add New
     </li>
+
+    <!-- I S S U E S -->
     <li class="nav-item item-toggle" id="issues-toggle">
       <i class="fas fa-book-open"></i>
       Issues
     </li>
-    <li class="nav-item sub-nav-item">
+    <li class="nav-item sub-nav-item issues-toggle">
       All Issues
     </li>
-    <li class="nav-item sub-nav-item">
-      Add New
-    </li>
+
+    <%= link_to new_admin_issue_path do %>
+      <li class="nav-item sub-nav-item issues-toggle">
+        Add New
+      </li>
+    <% end %>
+
+
+    <!-- M E D I AA -->
     <li class="nav-item item-toggle" id="media-toggle">
       <i class="fas fa-file"></i>
       Media
     </li>
-    <li class="nav-item sub-nav-item">
+
+    <li class="nav-item sub-nav-item media-toggle">
       All Media
     </li>
-    <li class="nav-item sub-nav-item">
-      Add New
-    </li>
+
+    <%= link_to new_admin_media_path do %>
+      <li class="nav-item sub-nav-item media-toggle">
+        Add New
+      </li>
+    <% end %>
 
   </ul>
 </div>
