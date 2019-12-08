@@ -1,103 +1,106 @@
 <div class="sidebar-sticky wide-nav admin-nav">
-  <div class="logo-container">
+  <div>
     <%= link_to root_path do %>
-      <%= image_tag('/assets/ninetwenty-logo.png') %>
-    <% end %>
-  </div>
-  <ul class="flex-column">
-    <%= link_to admin_path do %>
-      <li class="nav-item
-        <% if params[:controller] == 'admin/dashboard' && params[:action] == 'index' %>
-          active
-        <% end %>
-      ">
-        <i class="fas fa-tachometer-alt"></i>
-        Dashboard
-      </li>
-    <% end %>
-    <!-- U S E R S -->
-    <li class="nav-item item-toggle" id="users-toggle">
-      <i class="fas fa-user"></i>
-      Users
-    </li>
+      <div class="logo-container" style="background-image: url(<%= image_path 'ninetwenty-logo.png' %>)">
 
-    <%= link_to admin_users_path do %>
-      <li class="nav-item sub-nav-item users-toggle
-        <% if params[:controller] == 'admin/registrations' && params[:action] == 'index' %>
-          active
-        <% elsif params[:controller] == 'admin/registrations' %>
-          show
-        <% end %>">
-        All Users
-      </li>
+      </div>
     <% end %>
 
-    <%= link_to admin_new_user_path do %>
-      <li class="nav-item sub-nav-item users-toggle
-        <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
-          active
-        <% elsif params[:controller] == 'admin/registrations' %>
-          show
-        <% end %>">
-        Add New
+    <ul class="flex-column">
+      <%= link_to admin_path do %>
+        <li class="nav-item
+          <% if params[:controller] == 'admin/dashboard' && params[:action] == 'index' %>
+            active
+          <% end %>
+        ">
+          <i class="fas fa-tachometer-alt"></i>
+          Dashboard
+        </li>
+      <% end %>
+      <!-- U S E R S -->
+      <li class="nav-item item-toggle" id="users-toggle">
+        <i class="fas fa-user"></i>
+        Users
       </li>
-    <% end %>
 
-    <!-- I S S U E S -->
-    <li class="nav-item item-toggle" id="issues-toggle">
-      <i class="fas fa-book-open"></i>
-      Issues
-    </li>
-    <%= link_to admin_issues_path do %>
-      <li class="nav-item sub-nav-item issues-toggle
-        <% if params[:controller] == 'admin/issues' && params[:action] == 'index' %>
+      <%= link_to admin_users_path do %>
+        <li class="nav-item sub-nav-item users-toggle
+          <% if params[:controller] == 'admin/registrations' && params[:action] == 'index' %>
+            active
+          <% elsif params[:controller] == 'admin/registrations' %>
+            show
+          <% end %>">
+          All Users
+        </li>
+      <% end %>
+
+      <%= link_to admin_new_user_path do %>
+        <li class="nav-item sub-nav-item users-toggle
+          <% if params[:controller] == 'admin/registrations' && params[:action] == 'new' %>
+            active
+          <% elsif params[:controller] == 'admin/registrations' %>
+            show
+          <% end %>">
+          Add New
+        </li>
+      <% end %>
+
+      <!-- I S S U E S -->
+      <li class="nav-item item-toggle" id="issues-toggle">
+        <i class="fas fa-book-open"></i>
+        Issues
+      </li>
+      <%= link_to admin_issues_path do %>
+        <li class="nav-item sub-nav-item issues-toggle
+          <% if params[:controller] == 'admin/issues' && params[:action] == 'index' %>
+            active
+          <% elsif params[:controller] == 'admin/issues'%>
+            show
+          <% end %>">
+          All Issues
+        </li>
+      <% end %>
+
+      <%= link_to new_admin_issue_path do %>
+        <li class="nav-item sub-nav-item issues-toggle
+        <% if params[:controller] == 'admin/issues' && params[:action] == 'new' %>
           active
         <% elsif params[:controller] == 'admin/issues'%>
           show
         <% end %>">
-        All Issues
+          Add New
+        </li>
+      <% end %>
+
+
+      <!-- M E D I A -->
+      <li class="nav-item item-toggle" id="media-toggle">
+        <i class="fas fa-file"></i>
+        Media
       </li>
-    <% end %>
 
-    <%= link_to new_admin_issue_path do %>
-      <li class="nav-item sub-nav-item issues-toggle
-      <% if params[:controller] == 'admin/issues' && params[:action] == 'new' %>
-        active
-      <% elsif params[:controller] == 'admin/issues'%>
-        show
-      <% end %>">
-        Add New
-      </li>
-    <% end %>
+      <%= link_to admin_medias_path do %>
+        <li class="nav-item sub-nav-item media-toggle
+          <% if params[:controller] == 'admin/medias' && params[:action] == 'index'%>
+            active
+          <% elsif params[:controller] == 'admin/medias'%>
+            show
+          <% end %>">
+          All Media
+        </li>
+      <% end %>
 
-
-    <!-- M E D I A -->
-    <li class="nav-item item-toggle" id="media-toggle">
-      <i class="fas fa-file"></i>
-      Media
-    </li>
-
-    <%= link_to admin_medias_path do %>
-      <li class="nav-item sub-nav-item media-toggle
-        <% if params[:controller] == 'admin/medias' && params[:action] == 'index'%>
+      <%= link_to new_admin_media_path do %>
+        <li class="nav-item sub-nav-item media-toggle
+        <% if params[:controller] == 'admin/medias' && params[:action] == 'new' %>
           active
-        <% elsif params[:controller] == 'admin/medias'%>
+        <% elsif params[:controller] == 'admin/medias' %>
           show
         <% end %>">
-        All Media
-      </li>
-    <% end %>
+          Add New
+        </li>
+      <% end %>
 
-    <%= link_to new_admin_media_path do %>
-      <li class="nav-item sub-nav-item media-toggle
-      <% if params[:controller] == 'admin/medias' && params[:action] == 'new' %>
-        active
-      <% elsif params[:controller] == 'admin/medias' %>
-        show
-      <% end %>">
-        Add New
-      </li>
-    <% end %>
-
-  </ul>
+    </ul>
+  </div>
 </div>
