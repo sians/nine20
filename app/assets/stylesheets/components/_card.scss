@@ -78,3 +78,21 @@
 //.         I S S U E.      A D M I N.     C A R D
 
 
+
+
+//          U S E R     A D M I N      C A R D
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+  p {
+    margin-right: 70px;
+  }
+  span.current-user {
+    color: white;
+    background-color: $ninetwenty;
+  }
+}
+
+

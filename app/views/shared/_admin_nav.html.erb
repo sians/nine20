@@ -101,6 +101,13 @@
         </li>
       <% end %>
 
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="nav-item">
+          <i class="fas fa-sign-out-alt"></i>
+          Log Out
+        </li>
+      <% end %>
+
     </ul>
   </div>
 </div>
