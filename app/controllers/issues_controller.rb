@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :get_issue, only: %i[show edit update]
+  before_action :get_issue, only: %i[show]
 
   def index
     @issues = policy_scope(Issue).order(created_at: :desc)

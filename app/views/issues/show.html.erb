@@ -9,13 +9,15 @@
     </div> -->
     <% @issue.medias.each do |media| %>
       <div class="media-card">
-        <div class="media-cover-img">
+        <div class="media-cover-img" >
           <% if media.cover_image.present? %>
             <%= image_tag media.cover_image_url %>
           <% end %>
         </div>
         <div class="media-card-content">
-          <h6 class="date"><%= media.date_published.strftime('%d %b, %Y') %></h6>
+          <h6 class="date">
+            <%= media.date_published.strftime('%d %b, %Y') %>
+          </h6>
 
           <h2>
             <%= link_to issue_media_path(@issue, media) do %>
