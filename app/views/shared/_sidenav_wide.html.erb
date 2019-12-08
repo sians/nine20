@@ -1,14 +1,16 @@
 <div class="wide-nav">
-  <div class="logo-container">
-    <%= image_tag('/assets/ninetwenty-logo.png') %>
+  <div>
+    <div class="logo-container" style="background-image: url(<%= image_path '/assets/ninetwenty-logo.png' %>)">
+      <%#= image_tag('/assets/ninetwenty-logo.png') %>
+    </div>
+    <ul>
+      <li><%= link_to 'issues', root_path %></li>
+      <li><%= link_to 'podcasts', '#' %></li>
+      <li><%= link_to 'news', '#' %></li>
+      <li><%= link_to 'about', '#' %></li>
+      <li><%= link_to 'contact', '#' %></li>
+    </ul>
   </div>
-  <ul>
-    <li><%= link_to 'issues', root_path %></li>
-    <li><%= link_to 'podcasts', '#' %></li>
-    <li><%= link_to 'news', '#' %></li>
-    <li><%= link_to 'about', '#' %></li>
-    <li><%= link_to 'contact', '#' %></li>
-  </ul>
   <div class="social-container">
     <ul class="social-list">
       <li><i class="fab fa-facebook"></i></li>

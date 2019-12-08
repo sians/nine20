@@ -14,8 +14,6 @@
 
 //        A R T I C L E        C A R D
 .media-card {
-  height: 300px;
-  position: relative;
   .media-cover-img {
     height: 150px;
     background-color: rgba(0,0,0,0.1);
@@ -26,10 +24,9 @@
     }
   }
   .media-card-content {
-    position: absolute;
     padding: 20px;
     width: calc(100% - 60px);
-    top: 70px;
+    margin-top: -70px;
     .date {
       color: white;
     }
