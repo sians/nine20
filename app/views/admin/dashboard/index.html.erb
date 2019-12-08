@@ -13,7 +13,7 @@
     <% else %>
       <% @issues.reverse.each do |issue| %>
         <div class="admin-card admin-issue-card">
-          <h6><%= issue.title %></h6>
+          <h6><%= link_to issue_path(issue) do %><%= issue.title %><% end %></h6>
           <div class="buttons">
             <%= link_to 'Edit', edit_admin_issue_path(issue), class: 'btn-edit' %>
             <%= link_to admin_issue_path(issue), method: :destroy do %>
@@ -42,9 +42,11 @@
         <div class="admin-card admin-media-card">
           <h6><%= media.title %></h6>
           <div class="buttons">
-            <span class="issue">
-              <%= media.issue.title %>
-            </span>
+            <%= link_to issue_path(media.issue) do %>
+              <span class="issue">
+                <%= media.issue.title %>
+              </span>
+            <% end %>
             <%= link_to 'Edit', edit_admin_media_path(media), class: 'btn-edit button' %>
             <%= link_to admin_media_path(media), method: :delete do %>
               <i class="far fa-trash-alt"></i>
