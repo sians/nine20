@@ -6,6 +6,11 @@
   background-color: black;
   background-repeat: none;
   background-size: cover;
+  .issue-card-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
   img {
 
   }
@@ -31,14 +36,13 @@
       color: white;
     }
   }
-
+}
   span.media-title {
     background-color: $ninetwenty;
     color: white;
     font-size: 30px;
     padding: 0px 5px;
   }
-}
 
 
 //        A D m I N        C A R D

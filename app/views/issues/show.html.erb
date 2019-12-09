@@ -9,9 +9,12 @@
     </div> -->
     <% @issue.medias.each do |media| %>
       <div class="media-card">
-        <div class="media-cover-img" >
+        <div class="media-cover-img">
           <% if media.cover_image.present? %>
             <%= image_tag media.cover_image_url %>
+            <div class="color-filter" style="top: -150px;"></div>
+          <% else %>
+            <div class="color-filter" style="top: 0px"></div>
           <% end %>
         </div>
         <div class="media-card-content">

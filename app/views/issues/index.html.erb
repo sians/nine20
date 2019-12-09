@@ -27,7 +27,8 @@
             <div class="color-filter">
             </div>
             <div class="issue-card-content">
-              <h1><%= link_to issue.title, issue_path(issue) %></h1>
+              <h1><span class="media-title"><%= link_to issue.title, issue_path(issue) %></span></h1>
+
             </div>
           </div>
         <% end %>
