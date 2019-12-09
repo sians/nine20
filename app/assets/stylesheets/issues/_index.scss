@@ -53,6 +53,8 @@
       .issue-card-content {
         position: absolute;
         top: 0px;
+        width: 100%;
+        justify-content: space-around;
         a {
           font-size: 40px;
         }
@@ -65,5 +67,7 @@
   height: 100%;
   width: 100%;
   background-color: #692e23;
+  transition: opacity 0.5s ease-in-out;
   opacity: 0.5;
 }
+

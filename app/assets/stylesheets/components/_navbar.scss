@@ -2,7 +2,7 @@ a {
   text-decoration: none;
   color: $cream;
   letter-spacing: 1px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 a:hover {
@@ -25,8 +25,8 @@ a:hover {
   align-items: space-between;
   justify-content: space-between;
   .logo-container {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     background-size: cover;
     // object-fit: cover;
     margin: 40px auto 60px;
@@ -34,6 +34,8 @@ a:hover {
   ul {
     padding: 0px;
     margin: 20px 0px;
+    margin-left: 30px;
+    text-align: left;
     li {
       list-style: none;
       padding: 10px;
