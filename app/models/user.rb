@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :users_medias
   has_many :medias, through: :users_medias
+
 end

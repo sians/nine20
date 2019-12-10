@@ -13,34 +13,22 @@ class Admin::MediasController < ApplicationController
 
   def create
     @media = Media.new(media_params)
-    @issue = Issue.find(params[:media][:issue_id])
-    @media.issue = @issue
-    authors = params[:media][:user_ids].map do |user_id|
-      User.find(user_id) unless user_id.empty?
-    end
-    authors = authors.reject { |author| author.nil? || author == '' }
-    authors.each do |author|
-      @media.users << author
-    end
-    @media.save
     authorize @media
+
+    if @media.save
+      redirect_to admin_medias_path
+    else
+      render 'admin/medias/new'
+    end
   end
 
   def edit
   end
 
   def update
-    @issue = Issue.find(params[:media][:issue_id])
-    @media.issue = @issue
-    updated_authors = params[:media][:user_ids].map do |user_id|
-      User.find(user_id) unless user_id.empty?
-    end
-    updated_authors = updated_authors.reject { |author| author.nil? || author == '' }
-    users_medias = UsersMedia.where(media_id: @media.id)
-    users_medias.each { |users_media| users_media.delete }
-    updated_authors.each { |author| @media.users << author }
     if @media.update(media_params)
-      redirect_to admin_path
+      binding.pry
+      redirect_to admin_medias_path
     else
       render 'admin/medias/edit'
     end
@@ -77,10 +65,12 @@ class Admin::MediasController < ApplicationController
       :blurb,
       :content,
       :cover_image,
+      :cover_image_cache,
       :video_url,
       :audio_url,
       :media_type,
-      :user_ids
+      :issue_id,
+      { :user_ids => [] }
       )
   end
 

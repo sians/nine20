@@ -8,24 +8,28 @@
   <div class="media-form">
 
     <%= simple_form_for([:admin, @media]) do |f| %>
+
       <div class="form-group">
         <%= f.input :title,
+        validate: { presence: true },
         :label => 'Title of media:' %>
       </div>
 
       <div class="form-group">
         <%= f.input :media_type,
         :label => 'Type of media:',
+        :required => true,
         :collection => ["Article", "Podcast", "Video"],
         :selected => "Article"
         %>
       </div>
 
       <div class="form-group">
-        <%= f.input :issue_id,
+        <%= f.association :issue,
         :label => 'Issue for addition:',
-        :collection => Issue.all.map{|issue|[issue.title, issue.id]},
-        :selected => [Issue.last.title, Issue.last.id]
+        include_blank: false
+         # :collection => Issue.all.map{|issue|[issue.title, issue.id]}
+        # :selected => [Issue.last.title, Issue.last.id]
         %>
       </div>
 
@@ -68,10 +72,11 @@
         <%= f.input :published %>
       </div>
 
-      <div class="form-group">
-        <%= f.input :user_ids,
+      <div class="form-group select-input">
+        <%= f.association :users,
         :collection => User.all.map{|user|[user.first_name, user.id]},
-        :input_html => { multiple: true } %>
+        :selected => [current_user.first_name, current_user.id],
+        :input_html => {multiple: true} %>
       </div>
 
       <div class="form-submit">
