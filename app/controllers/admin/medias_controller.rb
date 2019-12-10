@@ -27,7 +27,6 @@ class Admin::MediasController < ApplicationController
 
   def update
     if @media.update(media_params)
-      binding.pry
       redirect_to admin_medias_path
     else
       render 'admin/medias/edit'
