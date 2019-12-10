@@ -5,6 +5,9 @@ gem 'devise'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'trix'
+gem 'trix-rails', require: 'trix'
+
 
 
 gem 'bootsnap', require: false
