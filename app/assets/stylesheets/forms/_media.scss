@@ -5,7 +5,7 @@
     margin-bottom: 50px;
   }
   .media-form {
-    width: 450px;
+    width: 550px;
     margin: auto;
     label {
       padding: 0px;
@@ -29,3 +29,27 @@
   }
 }
 
+trix-toolbar .trix-button:not(:disabled) {
+  background-color: white;
+}
+
+.new-media .media-form .trix-content {
+    background-color: white;
+    border-color: rgba(0, 0, 0, 0.2);
+    height: 400px;
+}
+
+trix-toolbar .trix-button--icon {
+  width: 1.4em;
+  height: 1.3em;
+  margin-right: 3px;
+  border: none;
+}
+
+trix-toolbar .trix-button-group {
+  border: none;
+}
+
+trix-toolbar .trix-button:not(:first-child) {
+  border: none;
+}
