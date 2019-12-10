@@ -5,4 +5,7 @@ class Media < ApplicationRecord
 
   mount_uploader :cover_image, MediaCoverImageUploader
 
+  validates :title, presence: true, allow_blank: false
+  validates :issue_id, :media_type, :users, presence: true
+
 end
