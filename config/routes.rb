@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     delete 'users/:id', to: 'registrations#destroy', as:  'delete_user'
 
     get 'inbox', to: 'contacts#index', as: 'inbox'
+    get 'toggle', to: 'contacts#toggle_read', as: 'toggle_read'
 
   end
 

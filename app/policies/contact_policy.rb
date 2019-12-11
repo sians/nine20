@@ -20,4 +20,8 @@ class ContactPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def toggle_read?
+    true
+  end
 end
