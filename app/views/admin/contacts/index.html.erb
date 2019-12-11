@@ -1,0 +1,36 @@
+<div class="admin">
+  <h2>Inbox (<%= @unread_contacts.size %>)</h2>
+  <div class="inbox-container">
+
+    <% if @contacts.nil? %>
+      <p>There are no messages.</p>
+    <% else %>
+      <% @contacts.each do |contact| %>
+        <div class="contact-card <% if contact.read %>read<% else %>unread<% end %>">
+          <div class="head">
+            <div class="status">
+              <% if contact.read %>
+                read
+              <% else %>
+                <span class="unread">unread</span>
+              <% end %>
+            </div>
+            <span><%= contact.name %></span>
+          </div>
+          <div class="body">
+            <span><%= contact.message %></span>
+            <div>
+              <div id="hover-menu">
+                <ul>
+                  <li><i class="fas fa-archive"></i></li>
+                  <li><i class="fas fa-envelope-open"></i></li>
+                </ul>
+              </div>
+              <span><%= contact.created_at.strftime('%d %b') %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

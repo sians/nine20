@@ -113,11 +113,20 @@ a:hover {
   ul {
     font-family: $headers-font;
     text-align: left;
-    font-size: 20px;
+    // font-size: 20px;
     color: $cream;
     li.nav-item {
       padding: 10px 25px;
       cursor: pointer;
+      .notification {
+        background-color: white;
+        color: black;
+        border-radius: 150px;
+        width: 26px;
+        padding: 5px;
+        font-size: 10px;
+        text-align: center;
+      }
     }
     li.nav-item.active, li.nav-item:hover {
       color: black;
@@ -136,6 +145,10 @@ a:hover {
     i {
       margin-right: 20px;
       width: 15px;
+    }
+    .inbox-nav-item {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

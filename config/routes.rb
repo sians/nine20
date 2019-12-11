@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'contacts/new'
+  get 'contacts/create'
   devise_for :users
 
   namespace :admin do
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
     get 'users/:id/edit', to: 'registrations#edit', as: 'edit_user'
     put 'users/:id/update', to:'registrations#update', as: 'update_user'
     delete 'users/:id', to: 'registrations#destroy', as:  'delete_user'
+
+    get 'inbox', to: 'contacts#index', as: 'inbox'
+
   end
 
   root to: 'issues#index'
@@ -21,6 +26,7 @@ Rails.application.routes.draw do
     resources :medias, only: [:index, :show]
   end
 
+  resources :contacts, only: [:new, :create]
   get 'about', to: 'pages#about', as: 'about'
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'news', to: 'pages#news', as: 'news'
