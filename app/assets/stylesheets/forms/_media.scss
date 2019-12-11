@@ -34,9 +34,17 @@ trix-toolbar .trix-button:not(:disabled) {
 }
 
 .new-media .media-form .trix-content {
-    background-color: white;
-    border-color: rgba(0, 0, 0, 0.2);
-    height: 400px;
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.2);
+  height: 400px;
+  overflow: scroll;
+    a {
+      color: $ninetwenty;
+    }
+    a:hover {
+      color: white;
+      background-color: $ninetwenty;
+    }
 }
 
 trix-toolbar .trix-button--icon {

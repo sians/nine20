@@ -51,6 +51,18 @@
         letter-spacing: 1px;
         margin-bottom: 30px;
       }
+      div {
+        font-size: 22px;
+        letter-spacing: 1px;
+        a {
+          font-size: 22px;
+          color: $ninetwenty;
+        }
+        a:hover {
+          color: white;
+          background-color: $ninetwenty;
+        }
+      }
     }
     .back {
       text-align: center;
