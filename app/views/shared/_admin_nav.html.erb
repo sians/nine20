@@ -17,6 +17,26 @@
           Dashboard
         </li>
       <% end %>
+
+      <!-- I N B O X -->
+      <%= link_to admin_inbox_path do %>
+        <li class="nav-item inbox-nav-item
+          <% if params[:controller] == 'admin/contacts' && params[:action] == 'index' %>
+            active
+          <% end %>
+        ">
+          <div>
+            <i class="fas fa-inbox"></i>
+            Inbox
+          </div>
+          <% if @unread_contacts.present? %>
+            <div class="notification">
+              <%= @unread_contacts.size %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+
       <!-- U S E R S -->
       <li class="nav-item item-toggle" id="users-toggle">
         <i class="fas fa-user"></i>

@@ -3,7 +3,7 @@ class Admin::MediasController < ApplicationController
   before_action :get_media, only: %i[edit update destroy]
 
   def index
-    @medias = policy_scope(Media).order(created_at: :desc)
+    @medias = policy_scope(Media).order(updated_at: :asc)
   end
 
   def new
