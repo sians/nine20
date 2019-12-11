@@ -7,6 +7,8 @@
     <% else %>
       <% @contacts.each do |contact| %>
         <div class="contact-card <% if contact.read %>read<% else %>unread<% end %>">
+
+
           <div class="head">
             <div class="status">
               <% if contact.read %>
@@ -18,17 +20,33 @@
             <span><%= contact.name %></span>
           </div>
           <div class="body">
-            <span><%= contact.message %></span>
+
+            <span class="message truncate"><%= contact.message.truncate(50) %></span>
+            <span class="message full"><%= contact.message %></span>
+
             <div>
               <div id="hover-menu">
                 <ul>
                   <li><i class="fas fa-archive"></i></li>
-                  <li><i class="fas fa-envelope-open"></i></li>
+                  <% if contact.read %>
+                    <%= link_to admin_toggle_read_path(:id => contact.id) do %>
+
+                      <li><i class="fas fa-envelope"></i></li>
+                      <% end %>
+                  <% else %>
+                    <li>
+                      <%= link_to admin_toggle_read_path(:id => contact.id) do %>
+                      <i class="fas fa-envelope-open"></i>
+                      <% end %>
+                    </li>
+                  <% end %>
                 </ul>
               </div>
-              <span><%= contact.created_at.strftime('%d %b') %></span>
+              <span class="date"><%= contact.created_at.strftime('%d %b') %></span>
             </div>
           </div>
+
+
         </div>
       <% end %>
     <% end %>

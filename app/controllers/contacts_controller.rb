@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :get_contact, only: [:toggle_read]
 
   def new
     @contact = Contact.new
@@ -22,6 +23,7 @@ class ContactsController < ApplicationController
   end
 
   private
+
 
   def contact_params
     params.require(:contact).permit(:name, :email, :message)

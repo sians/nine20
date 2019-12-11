@@ -1,6 +1,7 @@
 class Admin::MediasController < ApplicationController
   before_action :authenticate_user!
   before_action :get_media, only: %i[edit update destroy]
+  before_action :get_unread_contacts
 
   def index
     @medias = policy_scope(Media).order(updated_at: :asc)
@@ -73,6 +74,9 @@ class Admin::MediasController < ApplicationController
       )
   end
 
+  def get_unread_contacts
+    @unread_contacts = policy_scope(Contact).where(read: false).order(created_at: :desc)
+  end
 
 
 end

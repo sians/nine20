@@ -1,5 +1,6 @@
 class Admin::RegistrationsController < ApplicationController
   # before_action :fetch_user, only: %i[update]
+  before_action :get_unread_contacts
 
   def index
     @users = User.all
@@ -54,6 +55,10 @@ class Admin::RegistrationsController < ApplicationController
       :website,
       :password
       )
+  end
+
+  def get_unread_contacts
+    @unread_contacts = policy_scope(Contact).where(read: false).order(created_at: :desc)
   end
 
 end

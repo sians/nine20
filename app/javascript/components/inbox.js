@@ -10,8 +10,17 @@ const inboxHover = () => {
       card.addEventListener('mouseleave',  event => {
         event.currentTarget.querySelector('#hover-menu').style.display = "none";
       })
+      card.addEventListener('click', event => {
+        if (event.currentTarget.classList.contains("expanded")) {
+          event.currentTarget.classList.remove("expanded");
+        } else {
+          event.currentTarget.classList.add("expanded");
+        }
+      })
     })
   }
 }
+
+
 
 export { inboxHover };
