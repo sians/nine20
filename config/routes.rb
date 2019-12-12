@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
     get 'inbox', to: 'contacts#index', as: 'inbox'
     get 'toggle', to: 'contacts#toggle_read', as: 'toggle_read'
+    get 'toggle_archived', to: 'contacts#toggle_archived', as: 'toggle_archived'
 
   end
 

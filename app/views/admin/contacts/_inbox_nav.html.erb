@@ -1,0 +1,11 @@
+<div class="inbox-nav">
+  <ul>
+    <%= link_to admin_inbox_path(view: 'inbox') do %>
+      <li><i class="fas fa-inbox"></i></li>
+    <% end %>
+
+    <%= link_to admin_inbox_path(view: 'archived') do %>
+      <li><i class="fas fa-box-open"></i></li>
+    <% end %>
+  </ul>
+</div>

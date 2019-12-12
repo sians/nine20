@@ -1,54 +1,7 @@
 <div class="admin">
-  <h2>Inbox (<%= @unread_contacts.size %>)</h2>
-  <div class="inbox-container">
-
-    <% if @contacts.nil? %>
-      <p>There are no messages.</p>
-    <% else %>
-      <% @contacts.each do |contact| %>
-        <div class="contact-card <% if contact.read %>read<% else %>unread<% end %>">
-
-
-          <div class="head">
-            <div class="status">
-              <% if contact.read %>
-                read
-              <% else %>
-                <span class="unread">unread</span>
-              <% end %>
-            </div>
-            <span><%= contact.name %></span>
-          </div>
-          <div class="body">
-
-            <span class="message truncate"><%= contact.message.truncate(50) %></span>
-            <span class="message full"><%= contact.message %></span>
-
-            <div>
-              <div id="hover-menu">
-                <ul>
-                  <li><i class="fas fa-archive"></i></li>
-                  <% if contact.read %>
-                    <%= link_to admin_toggle_read_path(:id => contact.id) do %>
-
-                      <li><i class="fas fa-envelope"></i></li>
-                      <% end %>
-                  <% else %>
-                    <li>
-                      <%= link_to admin_toggle_read_path(:id => contact.id) do %>
-                      <i class="fas fa-envelope-open"></i>
-                      <% end %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-              <span class="date"><%= contact.created_at.strftime('%d %b') %></span>
-            </div>
-          </div>
-
-
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render @partial, locals: {
+      contacts: @contacts,
+      unread_contacts: @unread_contacts,
+      archived_contacts: @archived_contacts}
+  %>
 </div>
