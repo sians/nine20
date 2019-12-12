@@ -1,5 +1,5 @@
 <div class="admin">
-  <%= render @partial, locals: {
+  <%= render :partial => @partial, locals: {
       contacts: @contacts,
       unread_contacts: @unread_contacts,
       archived_contacts: @archived_contacts}
