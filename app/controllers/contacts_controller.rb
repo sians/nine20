@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     @contact.read = false
+    @contact.archived = false
     authorize @contact
 
     if @contact.save

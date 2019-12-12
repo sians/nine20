@@ -24,4 +24,8 @@ class ContactPolicy < ApplicationPolicy
   def toggle_read?
     true
   end
+
+  def toggle_archived?
+    true
+  end
 end

@@ -1,4 +1,25 @@
+.admin {
+  h2 {
+    margin-bottom: 50px;
+  }
+}
+
 .inbox-container {
-  margin-top: 50px;
+  margin-top: 10px;
   font-family: $headers-font;
+}
+
+.inbox-nav {
+  ul {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    li {
+      list-style: none;
+      margin-right: 30px;
+    }
+    a {
+      color: rgba(0,0,0,0.5);
+    }
+  }
 }
