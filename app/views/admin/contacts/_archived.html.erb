@@ -3,10 +3,10 @@
 
   <div class="inbox-container">
 
-    <% if @archived_contacts.nil? %>
+    <% if archived_contacts.nil? %>
       <p>There are no archived messages.</p>
     <% else %>
-      <% @archived_contacts.each do |contact| %>
+      <% archived_contacts.each do |contact| %>
         <div class="contact-card <% if contact.read %>read<% else %>unread<% end %>">
 
 

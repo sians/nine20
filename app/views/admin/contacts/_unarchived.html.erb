@@ -1,11 +1,11 @@
-  <h2>Inbox (<%= @unread_contacts.size %>)</h2>
+  <h2>Inbox (<%= unread_contacts.size %>)</h2>
   <%= render 'admin/contacts/inbox_nav' %>
   <div class="inbox-container">
 
-    <% if @contacts.nil? %>
+    <% if contacts.nil? %>
       <p>There are no messages.</p>
     <% else %>
-      <% @contacts.each do |contact| %>
+      <% contacts.each do |contact| %>
         <div class="contact-card <% if contact.read %>read<% else %>unread<% end %>">
 
 
