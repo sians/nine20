@@ -58,7 +58,7 @@ class Admin::RegistrationsController < ApplicationController
   end
 
   def get_unread_contacts
-    @unread_contacts = policy_scope(Contact).where(read: false).order(created_at: :desc)
+    @unread_contacts = policy_scope(Contact).where(archived: false).where(read: false).order(created_at: :desc)
   end
 
 end
