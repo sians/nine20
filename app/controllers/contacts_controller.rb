@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
     authorize @contact
 
     if @contact.save
-      ContactsMailer.general_message(@contact).deliver
+      ContactsMailer.new_contact_message(@contact).deliver
       render :thanks
     else
       redirect_to contact_path
